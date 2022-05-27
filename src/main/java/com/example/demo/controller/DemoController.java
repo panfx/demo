@@ -23,7 +23,7 @@ public class DemoController {
     @Value("${server.port}")
     private String port;
 
-    @Autowired
+//    @Autowired
     private RestTemplate template;
 
 //    @NacosValue(value = "${name}", autoRefreshed = true)
@@ -31,7 +31,7 @@ public class DemoController {
 
     @GetMapping("/api/test")
     @ResponseBody
-    public String test(HttpServletRequest request) {
+    public String test(HttpServletRequest request, String name) {
         return "port=" + port + ";name=" + name;
     }
 
